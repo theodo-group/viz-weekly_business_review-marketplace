@@ -1,18 +1,22 @@
-import react from '@vitejs/plugin-react-swc';
-import { defineConfig } from 'vite';
+import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
+import basicSsl from "@vitejs/plugin-basic-ssl";
 
 export default defineConfig({
   build: {
     emptyOutDir: false,
-    target: 'esnext',
+    target: "esnext",
     rollupOptions: {
       input: {
-        weeklyBusinessReview: 'src/viz/weeklyBusinessReview/main.ts',
+        weeklyBusinessReview: "src/viz/weeklyBusinessReview/main.ts",
       },
       output: {
-        entryFileNames: '[name].js',
+        entryFileNames: "[name].js",
       },
     },
   },
-  plugins: [react()],
+  preview: {
+    https: true,
+  },
+  plugins: [react(), basicSsl()],
 });
