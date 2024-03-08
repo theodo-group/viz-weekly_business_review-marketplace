@@ -1,5 +1,6 @@
 {
   "name": "weekly-business-review-looker-viz",
+  "license": "MIT",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -18,8 +19,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.63",
-    "@types/react-dom": "^18.2.20",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "@vitejs/plugin-react-swc": "^3.6.0",
@@ -32,7 +33,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-unused-imports": "^3.1.0",
     "prettier": "^3.2.5",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "vite": "^5.1.5"
   }
 }

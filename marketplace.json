@@ -1,0 +1,19 @@
+{
+  "label": "Weekly Business Review (Working Backwards)",
+  "category_label": "plug-ins",
+  "branding": {
+    "image_uri": "TODO",
+    "tagline": "Use the weekly business review visualization like Amazon does"
+  },
+  "constants": {
+    "vis_label": {
+      "label": "Visualization Label",
+      "description": "This label will appear in the visualization selector in the Looker Explore UI."
+    },
+    "vis_id": {
+      "label": "Visualization Id",
+      "description": "This must be a unique ID across all visualizations.",
+      "value_constraint": "visualization"
+    }
+  }
+}
