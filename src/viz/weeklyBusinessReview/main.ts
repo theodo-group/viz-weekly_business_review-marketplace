@@ -46,7 +46,6 @@ const vis: VisualizationDefinition<WeeklyBusinessReviewVisConfig> = {
   options: weeklyBusinessReviewVisOptions,
   create: () => {},
   updateAsync(data, element, config, queryResponse, _details, done) {
-    this.clearErrors && this.clearErrors();
     const {
       metricName,
       numberFormat,
@@ -65,13 +64,16 @@ const vis: VisualizationDefinition<WeeklyBusinessReviewVisConfig> = {
       visType
     );
 
+    if (queryResponseValidation.isValid === true) {
+      this.clearErrors && this.clearErrors();
+    }
+
     if (queryResponseValidation.isValid === false) {
       this.addError &&
         this.addError({
           title: queryResponseValidation.errorTitle,
           message: queryResponseValidation.errorMessage,
         });
-      done();
       return;
     }
 
@@ -144,7 +146,10 @@ const vis: VisualizationDefinition<WeeklyBusinessReviewVisConfig> = {
         shouldDisplayTable,
         metricType,
         metricOwner,
-        numberFormat: numberFormat === null ? NumberFormat.NONE : numberFormat,
+        numberFormat:
+          numberFormat === null || numberFormat === undefined
+            ? NumberFormat.NONE
+            : numberFormat,
         displayedDigits: displayedDigits === null ? undefined : displayedDigits,
         numberOutput,
       },

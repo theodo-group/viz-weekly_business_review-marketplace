@@ -18,7 +18,8 @@ export const isValidQueryResponse = (
   if (queryResponse.fields.dimensions.length !== 1) {
     return {
       isValid: false,
-      errorMessage: "Only one dimension is allowed",
+      errorMessage:
+        "Remove a dimension in the data panel (or add if not present)",
       errorTitle: "Only one dimension is allowed",
     };
   }
